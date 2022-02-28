@@ -12,3 +12,11 @@ enum class RESPONSE_STATUS{
     FAIL,
     NO_CONTENT
 }
+object API{
+    const val BASE_URL:String="http://openapi.kepco.co.kr/service/EvInfoServiceV2/getEvSearchList/"
+    const val SERVICE_KEY:String=""
+
+    const val SEARCH:String=""
+
+
+}
