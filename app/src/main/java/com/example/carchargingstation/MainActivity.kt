@@ -4,14 +4,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.example.carchargingstation.databinding.ActivityMainBinding
 import com.example.carchargingstation.utils.Constants.TAG
 import com.example.carchargingstation.utils.FragmentType
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.navigation.NavigationBarView
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
+    private lateinit var mainViewModel: MainViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setBinding()
@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.map -> {
                     Log.d(TAG,"MapFragment클릭")
                     changeFragment(FragmentType.MAP)
+                    mainViewModel.getHomeData()
                     true
                 }
                 R.id.third -> {
@@ -38,7 +39,11 @@ class MainActivity : AppCompatActivity() {
                 else -> false
             }
         }
-        
+
+
+
+        setObserve()
+
     }
     private fun changeFragment(type:FragmentType) {
         supportFragmentManager.beginTransaction().replace(R.id.frame_layout_main, getFragment(type)).commit()
@@ -52,5 +57,15 @@ class MainActivity : AppCompatActivity() {
 
     fun setBinding() {
         binding = ActivityMainBinding.inflate(layoutInflater)
+        mainViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
     }
+    fun setObserve() {//
+        //Log.d(Constants.TAG,"!!MainActivity - setObserve() called")
+        mainViewModel.stationData.observe(this, androidx.lifecycle.Observer {
+            Log.d(TAG,"MainActivity - setObserve() called  뷰모델의 데이터 변경됨 :  ${it.body.items.item[0]}")
+
+        })
+    }
+
 }
+

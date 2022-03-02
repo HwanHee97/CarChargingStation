@@ -10,9 +10,9 @@ import retrofit2.http.Query
 interface IRetrofit {
     @GET(API.SEARCH)
     fun getSearchData(
-        @Query("addr") addr: String,
         @Query("pageNo") pageNo: Int,
-        @Query("numOfRows") numOfRows: Int
+        @Query("numOfRows") numOfRows: Int,
+        @Query("addr") addr: String
     ): Call<ChargingStationState>
 
 }

@@ -55,9 +55,9 @@ data class Item(
     @PropertyElement(name = "csNm")
     var csNm: String?,
     @PropertyElement(name = "lat")
-    var lat: Long?,
+    var lat: String?,
     @PropertyElement(name = "longi")
-    var longi: Long?,
+    var longi: String?,
     @PropertyElement(name = "statUpdateDatetime")
     var statUpdateDatetime: String?
 )
