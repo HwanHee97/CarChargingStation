@@ -1,4 +1,4 @@
-package com.example.carchargingstation
+package com.example.carchargingstation.fragments.map
 
 import android.os.Bundle
 import android.util.Log
@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.carchargingstation.R
 import com.example.carchargingstation.utils.Constants
 import com.example.carchargingstation.utils.Constants.TAG
 

@@ -6,6 +6,8 @@ import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.carchargingstation.databinding.ActivityMainBinding
+import com.example.carchargingstation.fragments.map.MapFragment
+import com.example.carchargingstation.fragments.search.SearchFragment
 import com.example.carchargingstation.utils.Constants.TAG
 import com.example.carchargingstation.utils.FragmentType
 
@@ -48,8 +50,8 @@ class MainActivity : AppCompatActivity() {
     }
     private fun getFragment(type:FragmentType):Fragment{
         return when(type){
-            FragmentType.SEARCH->SearchFragment()
-            FragmentType.MAP->MapFragment()
+            FragmentType.SEARCH-> SearchFragment()
+            FragmentType.MAP-> MapFragment()
         }
     }
 
