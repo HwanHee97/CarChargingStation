@@ -4,9 +4,8 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.carchargingstation.RpDataModel.ChargingStationState
+import com.example.carchargingstation.rpdatamodel.ChargingStationState
 import com.example.carchargingstation.network.RetrofitManager
-import com.example.carchargingstation.utils.Constants
 import com.example.carchargingstation.utils.Constants.TAG
 import com.example.carchargingstation.utils.RESPONSE_STATUS
 

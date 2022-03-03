@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="station"
+            type="com.example.carchargingstation.rpdatamodel.Item" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:padding="5dp">
+
+
+        <TextView
+            android:id="@+id/cs_name_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{station.cpNm}"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="용산역 아이파크몰" />
+
+        <ImageView
+            android:id="@+id/charging_possiblity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_charging_possible_24"
+            app:layout_constraintLeft_toRightOf="@id/cs_name_textview"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+            android:id="@+id/charging_type_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            app:layout_constraintTop_toBottomOf="@+id/cs_name_textview"
+            tools:text="1 : 완속 2 : 급속" />
+
+        <TextView
+            android:id="@+id/charging_pin_type_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            app:layout_constraintTop_toBottomOf="@+id/charging_type_textview"
+            tools:text="1 : B타입(5핀)" />
+
+        <TextView
+            android:id="@+id/addr_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{station.addr}"
+            app:layout_constraintStart_toStartOf="@+id/charging_pin_type_textview"
+            app:layout_constraintTop_toBottomOf="@+id/charging_pin_type_textview"
+            tools:text="서울특별시 용산구 한강로3가 40-999 4.5F층 달주차장" />
+
+        <TextView
+            android:id="@+id/upadte_time_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{station.statUpdateDatetime}"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/addr_textview"
+            tools:text="2022-03-03 16:26:55" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

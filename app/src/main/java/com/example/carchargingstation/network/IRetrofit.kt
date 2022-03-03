@@ -1,6 +1,6 @@
 package com.example.carchargingstation.network
 
-import com.example.carchargingstation.RpDataModel.ChargingStationState
+import com.example.carchargingstation.rpdatamodel.ChargingStationState
 import com.example.carchargingstation.utils.API
 import retrofit2.Call
 import retrofit2.http.GET

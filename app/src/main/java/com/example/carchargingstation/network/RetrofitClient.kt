@@ -23,17 +23,17 @@ object RetrofitClient {
     fun getClient(baseUrl: String):Retrofit?{
         val client= OkHttpClient.Builder()
 
-        //로그를 찍기 위해 로깅인터셉터 설정
-        val loggingInterceptor = HttpLoggingInterceptor(object : HttpLoggingInterceptor.Logger {
-            override fun log(message: String) {
-                Log.d(TAG, "RetrofitClient - log() called / message : $message")
-            }
-        })
-        //로깅 레벨 설정
-        loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
-        client.addInterceptor(loggingInterceptor)
+//        //로그를 찍기 위해 로깅인터셉터 설정
+//        val loggingInterceptor = HttpLoggingInterceptor(object : HttpLoggingInterceptor.Logger {
+//            override fun log(message: String) {
+//                Log.d(TAG, "RetrofitClient - log() called / message : $message")
+//            }
+//        })
+//        //로깅 레벨 설정
+//        loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
+//        client.addInterceptor(loggingInterceptor)
 
-        //기본 파라미터 추가
+        //기본 파라미터 추가(서비스 키)
         val baseParameterInterceptor: Interceptor =(object : Interceptor {
             override fun intercept(chain: Interceptor.Chain): Response {
                 //오리지널 리퀘스트

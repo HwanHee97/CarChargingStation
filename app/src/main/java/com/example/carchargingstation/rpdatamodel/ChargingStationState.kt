@@ -1,4 +1,4 @@
-package com.example.carchargingstation.RpDataModel
+package com.example.carchargingstation.rpdatamodel
 
 import com.tickaroo.tikxml.annotation.Element
 import com.tickaroo.tikxml.annotation.PropertyElement

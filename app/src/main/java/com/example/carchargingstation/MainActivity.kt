@@ -10,7 +10,7 @@ import com.example.carchargingstation.utils.Constants.TAG
 import com.example.carchargingstation.utils.FragmentType
 
 class MainActivity : AppCompatActivity() {
-    lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
     private lateinit var mainViewModel: MainViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,8 +40,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-
-
         setObserve()
 
     }
@@ -55,11 +53,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun setBinding() {
+    private fun setBinding() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         mainViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
     }
-    fun setObserve() {//
+    private fun setObserve() {//
         //Log.d(Constants.TAG,"!!MainActivity - setObserve() called")
         mainViewModel.stationData.observe(this, androidx.lifecycle.Observer {
             Log.d(TAG,"MainActivity - setObserve() called  뷰모델의 데이터 변경됨 :  ${it.body.items.item[0]}")

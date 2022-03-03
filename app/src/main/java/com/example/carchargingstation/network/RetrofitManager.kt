@@ -1,7 +1,7 @@
 package com.example.carchargingstation.network
 
 import android.util.Log
-import com.example.carchargingstation.RpDataModel.ChargingStationState
+import com.example.carchargingstation.rpdatamodel.ChargingStationState
 import com.example.carchargingstation.utils.API
 import com.example.carchargingstation.utils.Constants
 import com.example.carchargingstation.utils.RESPONSE_STATUS
@@ -21,17 +21,15 @@ class RetrofitManager {
 
         call=iRetrofit?.getSearchData(addr = addr ,pageNo =pageno ,numOfRows = numofrows).let { it } ?: return
 
-
         call.enqueue(object : retrofit2.Callback<ChargingStationState> {
             override fun onResponse(call: Call<ChargingStationState>, response: Response<ChargingStationState>) {
-                Log.d(Constants.TAG, "RetrofitManager -${response.code()} ")
+                //Log.d(Constants.TAG, "RetrofitManager -${response.code()} ")
                 when(response.code()){
                     200->{
-                        Log.d(Constants.TAG, "RetrofitManager -response.code()==200 ")
                         response.body()?.let {
-                            Log.d(Constants.TAG, "RetrofitManager - api 호출 성공: ")
+                            //Log.d(Constants.TAG, "RetrofitManager - api 호출 성공: ")
                             completion(RESPONSE_STATUS. SUCCESS,it)
-                        }
+                        }?:completion(RESPONSE_STATUS.NO_CONTENT,null)//통신은 성공이지만 값이 없을때
                     }
                 }
             }
@@ -40,4 +38,5 @@ class RetrofitManager {
             }
         })
     }
+
 }
