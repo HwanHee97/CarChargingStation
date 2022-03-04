@@ -10,7 +10,7 @@ fun setStateImage(imageView: ImageView, state:Int){
     when(state){
         1->        imageView.setImageResource(R.drawable.ic_baseline_charging_possible_24)
         2->        imageView.setImageResource(R.drawable.ic_baseline_charging_in_use_24)
-        3->        imageView.setImageResource(R.drawable.ic_baseline_charging_impossible_24)
+        3,4,5->        imageView.setImageResource(R.drawable.ic_baseline_charging_impossible_24)
     }
 }
 
