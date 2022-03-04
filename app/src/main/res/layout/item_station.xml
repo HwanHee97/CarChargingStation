@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:custom="http://schemas.android.com/apk/res-auto">
     <data>
         <variable
             name="station"
@@ -19,7 +20,7 @@
             android:id="@+id/cs_name_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{station.cpNm}"
+            android:text="@{station.csNm}"
             android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
@@ -30,15 +31,14 @@
             android:id="@+id/charging_possiblity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_charging_possible_24"
-            app:layout_constraintLeft_toRightOf="@id/cs_name_textview"
+            custom:setStateImage="@{station.cpStat}"
             app:layout_constraintRight_toRightOf="parent" />
 
         <TextView
             android:id="@+id/charging_type_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
+            custom:setChargeType="@{station.chargeTp}"
             app:layout_constraintTop_toBottomOf="@+id/cs_name_textview"
             tools:text="1 : 완속 2 : 급속" />
 
@@ -46,7 +46,7 @@
             android:id="@+id/charging_pin_type_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
+            custom:setChargePinType="@{station.cpTp}"
             app:layout_constraintTop_toBottomOf="@+id/charging_type_textview"
             tools:text="1 : B타입(5핀)" />
 

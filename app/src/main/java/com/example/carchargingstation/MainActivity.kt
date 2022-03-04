@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.map -> {
                     Log.d(TAG,"MapFragment클릭")
                     changeFragment(FragmentType.MAP)
-                    mainViewModel.getHomeData()
+                   // mainViewModel.getHomeData()
                     true
                 }
                 R.id.third -> {

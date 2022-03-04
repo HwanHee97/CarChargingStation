@@ -16,7 +16,7 @@ class MainViewModel: ViewModel() {
 
     fun getHomeData(){
         Log.d(TAG, "MainViewModel -getHomeData() ")
-        RetrofitManager.instance.callChargingStationData( "전라남도" , 1 , 10, completion = {
+        RetrofitManager.instance.callChargingStationData( "서울" , 1 , 10, completion = {
                 responseState, responseData ->
             when (responseState) {
                 RESPONSE_STATUS.SUCCESS -> {
