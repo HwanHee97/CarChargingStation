@@ -2,4 +2,17 @@
     <string name="app_name">CarChargingStation</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fast_charge">급속</string>
+    <string name="slow_charge">완속</string>
+
+    <string name="charge_pin_type_1">B타입(5핀)</string>
+    <string name="charge_pin_type_2">C타입(5핀)</string>
+    <string name="charge_pin_type_3">BC타입(5핀)</string>
+    <string name="charge_pin_type_4">BC타입(7핀)</string>
+    <string name="charge_pin_type_5">DC차데모</string>
+    <string name="charge_pin_type_6">AC3상</string>
+    <string name="charge_pin_type_7">DC콤보</string>
+    <string name="charge_pin_type_8">DC차데모+DC콤보</string>
+    <string name="charge_pin_type_9">DC차데모+AC3상</string>
+    <string name="charge_pin_type_10">DC차데모+DC콤보+AC3상</string>
 </resources>
