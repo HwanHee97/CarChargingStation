@@ -14,9 +14,9 @@ class MainViewModel: ViewModel() {
     val stationData: LiveData<ChargingStationState>
         get() =_stationData
 
-    fun getHomeData(){
+    fun getSearchData( addr:String){
         Log.d(TAG, "MainViewModel -getHomeData() ")
-        RetrofitManager.instance.callChargingStationData( "서울" , 1 , 10, completion = {
+        RetrofitManager.instance.callChargingStationData( addr=addr , 1 , 10, completion = {
                 responseState, responseData ->
             when (responseState) {
                 RESPONSE_STATUS.SUCCESS -> {

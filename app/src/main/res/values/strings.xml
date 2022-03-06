@@ -2,6 +2,8 @@
     <string name="app_name">CarChargingStation</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="no_data">알수없음</string>
+
     <string name="fast_charge">급속</string>
     <string name="slow_charge">완속</string>
 
@@ -15,4 +17,6 @@
     <string name="charge_pin_type_8">DC차데모+DC콤보</string>
     <string name="charge_pin_type_9">DC차데모+AC3상</string>
     <string name="charge_pin_type_10">DC차데모+DC콤보+AC3상</string>
+
+    <string name="base_search_addr">서울</string>
 </resources>
